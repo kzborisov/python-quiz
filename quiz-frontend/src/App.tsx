@@ -56,7 +56,7 @@ const App: React.FC = () => {
       </div>
 
       <p className="fade-up fade-up-4 text-muted mt-12 text-[11px] tracking-[0.1em]">
-        Built for your team's growth
+        Built for your growth
       </p>
     </div>
   );
