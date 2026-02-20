@@ -1,0 +1,702 @@
+[
+    {
+        "id": 1,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why does CPython use reference counting?",
+        "options": [
+            "To avoid using a garbage collector entirely",
+            "To enable deterministic object destruction",
+            "To improve multi-threading performance",
+            "To reduce memory fragmentation"
+        ],
+        "correct_index": 1,
+        "explanation": "Reference counting allows immediate cleanup when reference count drops to zero."
+    },
+    {
+        "id": 2,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "What is the main limitation of reference counting in CPython?",
+        "options": [
+            "Cannot handle cyclic references",
+            "Cannot reclaim memory",
+            "Slows down arithmetic operations",
+            "Breaks immutable objects"
+        ],
+        "correct_index": 0,
+        "explanation": "Cycles are not collected by reference counting alone; CPython uses cyclic GC to handle them."
+    },
+    {
+        "id": 3,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "What is the GIL and why does it exist?",
+        "options": [
+            "A global interpreter lock to simplify memory management",
+            "A mechanism to speed up threading",
+            "A garbage collector optimization",
+            "A lock to prevent function re-entrancy"
+        ],
+        "correct_index": 0,
+        "explanation": "The GIL prevents multiple native threads from executing Python bytecode at the same time, simplifying memory management."
+    },
+    {
+        "id": 4,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why doesn’t the GIL hurt IO-bound programs?",
+        "options": [
+            "Because threads never release the GIL",
+            "Because IO operations release the GIL",
+            "Because Python has no IO-bound threads",
+            "Because multiprocessing bypasses it"
+        ],
+        "correct_index": 1,
+        "explanation": "IO-bound operations release the GIL, so other threads can run while waiting."
+    },
+    {
+        "id": 5,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is PyPy often faster than CPython?",
+        "options": [
+            "Because it uses JIT compilation",
+            "Because it removes reference counting",
+            "Because it disables GIL",
+            "Because it uses C extensions"
+        ],
+        "correct_index": 0,
+        "explanation": "PyPy uses a Just-In-Time compiler which can optimize runtime code."
+    },
+    {
+        "id": 6,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "What is the difference between shallow and deep copy in Python?",
+        "options": [
+            "Shallow copies objects recursively, deep only top-level",
+            "Shallow copies top-level container, deep copies nested objects",
+            "They are identical",
+            "Shallow copies immutables, deep copies mutables"
+        ],
+        "correct_index": 1,
+        "explanation": "Shallow copy duplicates the container but references inner objects; deep copy duplicates recursively."
+    },
+    {
+        "id": 7,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "How does Python manage memory for small integers?",
+        "options": [
+            "Creates a new object each time",
+            "Interns commonly used small integers",
+            "Uses lazy allocation",
+            "Stores them in heap only"
+        ],
+        "correct_index": 1,
+        "explanation": "Small integers (-5 to 256) are pre-allocated and reused."
+    },
+    {
+        "id": 8,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "What is the role of generational GC in CPython?",
+        "options": [
+            "Tracks objects by type",
+            "Optimizes collection of short-lived objects",
+            "Prevents GIL contention",
+            "Reduces memory fragmentation"
+        ],
+        "correct_index": 1,
+        "explanation": "Young generation objects are collected more often as they are more likely to become unreachable quickly."
+    },
+    {
+        "id": 9,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why does CPython use reference counting together with cyclic GC?",
+        "options": [
+            "Reference counting alone cannot collect cycles",
+            "GC alone is too slow",
+            "To improve threading",
+            "To manage memory pools"
+        ],
+        "correct_index": 0,
+        "explanation": "Cycles cannot be collected by reference counting, so GC handles them."
+    },
+    {
+        "id": 10,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is passing a large object by reference efficient in Python?",
+        "options": [
+            "Because Python copies it in memory",
+            "Because only reference pointer is passed",
+            "Because Python serializes it",
+            "Because Python duplicates only first elements"
+        ],
+        "correct_index": 1,
+        "explanation": "Passing by reference avoids copying the entire object."
+    },
+    {
+        "id": 11,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "What happens to reference counts when an object is deleted?",
+        "options": [
+            "Reference count decreases by one",
+            "Reference count increases",
+            "Reference count is reset to zero",
+            "Object is immediately destroyed"
+        ],
+        "correct_index": 0,
+        "explanation": "Deleting a reference reduces the object's reference count by one."
+    },
+    {
+        "id": 12,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is weakref used in Python?",
+        "options": [
+            "To prevent objects from being garbage collected",
+            "To allow references without increasing reference count",
+            "To make objects immutable",
+            "To increase GIL performance"
+        ],
+        "correct_index": 1,
+        "explanation": "Weak references do not increase reference count and allow garbage collection."
+    },
+    {
+        "id": 13,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "What triggers a collection of cyclic garbage in CPython?",
+        "options": [
+            "Reference count dropping to zero",
+            "Threshold of allocated objects",
+            "GIL release",
+            "Calling list.sort()"
+        ],
+        "correct_index": 1,
+        "explanation": "Cyclic GC is triggered when the object generation thresholds are exceeded."
+    },
+    {
+        "id": 14,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is memoryview useful in Python?",
+        "options": [
+            "It copies data",
+            "It allows zero-copy access to buffer objects",
+            "It prevents mutations",
+            "It releases the GIL"
+        ],
+        "correct_index": 1,
+        "explanation": "memoryview provides zero-copy access to byte buffers."
+    },
+    {
+        "id": 15,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "How does CPython allocate small objects efficiently?",
+        "options": [
+            "Using the object pool allocator (obmalloc)",
+            "Using malloc directly",
+            "Using shared memory",
+            "Using stack allocation"
+        ],
+        "correct_index": 0,
+        "explanation": "CPython uses specialized memory pools for small objects."
+    },
+    {
+        "id": 16,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is object resurrection in __del__ dangerous?",
+        "options": [
+            "It causes GIL deadlocks",
+            "It can resurrect objects during GC causing leaks",
+            "It breaks hashing",
+            "It converts objects to immutable"
+        ],
+        "correct_index": 1,
+        "explanation": "__del__ can resurrect objects, preventing their collection."
+    },
+    {
+        "id": 17,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "What is interning in Python?",
+        "options": [
+            "Caching of immutable objects like strings and small ints",
+            "Garbage collection optimization",
+            "Reference count reset",
+            "Thread-local memory allocation"
+        ],
+        "correct_index": 0,
+        "explanation": "Python caches certain immutable objects for efficiency."
+    },
+    {
+        "id": 18,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "How does the GIL affect CPU-bound multithreading?",
+        "options": [
+            "Improves performance",
+            "Prevents true parallel execution of Python bytecode",
+            "Prevents IO operations",
+            "Reduces memory usage"
+        ],
+        "correct_index": 1,
+        "explanation": "The GIL allows only one thread to execute Python bytecode at a time."
+    },
+    {
+        "id": 19,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why can deepcopy fail on certain objects?",
+        "options": [
+            "Objects do not implement __deepcopy__ correctly",
+            "Objects are immutable",
+            "Reference counting prevents it",
+            "GIL blocks it"
+        ],
+        "correct_index": 0,
+        "explanation": "Custom objects may require a proper __deepcopy__ implementation."
+    },
+    {
+        "id": 20,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is memory fragmentation less of a problem in Python?",
+        "options": [
+            "Because of garbage collection and obmalloc pools",
+            "Because all objects are immutable",
+            "Because lists are contiguous",
+            "Because Python runs on VM only"
+        ],
+        "correct_index": 0,
+        "explanation": "Memory pools and GC help reduce fragmentation for small objects."
+    },
+    {
+        "id": 21,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why does CPython use PyObject_HEAD in every object?",
+        "options": [
+            "To store type info and reference count",
+            "To store memory address",
+            "To store hash",
+            "To store value"
+        ],
+        "correct_index": 0,
+        "explanation": "PyObject_HEAD stores the type pointer and reference count for all objects."
+    },
+    {
+        "id": 22,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "What is the effect of hash randomization?",
+        "options": [
+            "Prevents hash collisions",
+            "Randomizes hash seeds for security",
+            "Increases lookup speed",
+            "Disables GIL"
+        ],
+        "correct_index": 1,
+        "explanation": "Hash randomization prevents predictable hash collisions attacks."
+    },
+    {
+        "id": 23,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "How does cyclic GC identify unreachable objects?",
+        "options": [
+            "By checking reference counts only",
+            "By scanning object graphs for cycles",
+            "By inspecting type",
+            "By memory address"
+        ],
+        "correct_index": 1,
+        "explanation": "GC scans object graph to detect cycles unreachable from root set."
+    },
+    {
+        "id": 24,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why are immutable objects like tuples safer for concurrent reads?",
+        "options": [
+            "Because they release GIL automatically",
+            "Because they cannot be modified",
+            "Because they have special locks",
+            "Because they are stored in stack"
+        ],
+        "correct_index": 1,
+        "explanation": "Immutable objects cannot be modified, preventing race conditions."
+    },
+    {
+        "id": 25,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is bytearray sometimes preferred over bytes?",
+        "options": [
+            "It is immutable",
+            "It allows in-place modification",
+            "It releases GIL",
+            "It is faster to hash"
+        ],
+        "correct_index": 1,
+        "explanation": "bytearray is mutable and can be modified in place."
+    },
+    {
+        "id": 26,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "What is the purpose of Py_INCREF and Py_DECREF in C extensions?",
+        "options": [
+            "To handle GIL",
+            "To manage reference counts",
+            "To allocate memory",
+            "To release memory pools"
+        ],
+        "correct_index": 1,
+        "explanation": "These macros increment/decrement object reference counts in C extensions."
+    },
+    {
+        "id": 27,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why can object resurrection complicate GC?",
+        "options": [
+            "It triggers GIL",
+            "Objects become reachable again during collection",
+            "It changes hashing",
+            "It disables cyclic GC"
+        ],
+        "correct_index": 1,
+        "explanation": "Resurrected objects prevent proper collection, delaying GC."
+    },
+    {
+        "id": 28,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "How does CPython track generations in GC?",
+        "options": [
+            "By type of object",
+            "By creation time",
+            "By number of collections survived",
+            "By reference count"
+        ],
+        "correct_index": 2,
+        "explanation": "Objects that survive collections are promoted to older generations."
+    },
+    {
+        "id": 29,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "What is the impact of cyclic GC on program performance?",
+        "options": [
+            "Always increases speed",
+            "Can add pauses during collection",
+            "Prevents threading",
+            "Increases memory footprint linearly"
+        ],
+        "correct_index": 1,
+        "explanation": "GC adds occasional pauses to identify unreachable cycles."
+    },
+    {
+        "id": 30,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why does PyPy's JIT optimize loops aggressively?",
+        "options": [
+            "Because loops are slow in CPython",
+            "Because JIT can detect hot code paths",
+            "Because GIL is removed",
+            "Because memory is contiguous"
+        ],
+        "correct_index": 1,
+        "explanation": "JIT identifies frequently executed code and optimizes it at runtime."
+    },
+    {
+        "id": 31,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why can multi-threaded CPU-bound Python code be slower than single-threaded?",
+        "options": [
+            "Due to reference counting overhead",
+            "Due to GIL limiting bytecode execution to one thread",
+            "Due to interpreter compilation",
+            "Due to deep copy overhead"
+        ],
+        "correct_index": 1,
+        "explanation": "GIL prevents true parallel execution of Python bytecode."
+    },
+    {
+        "id": 32,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is __del__ method considered dangerous?",
+        "options": [
+            "It releases GIL",
+            "It can resurrect objects and delay GC",
+            "It slows arithmetic",
+            "It changes reference counts automatically"
+        ],
+        "correct_index": 1,
+        "explanation": "__del__ can resurrect objects, causing memory leaks."
+    },
+    {
+        "id": 33,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "How do CPython memory allocators reduce fragmentation for small objects?",
+        "options": [
+            "Using obmalloc pools",
+            "Using garbage collection",
+            "Using reference counting",
+            "Using tuples"
+        ],
+        "correct_index": 0,
+        "explanation": "obmalloc pools allocate blocks for small objects to reduce fragmentation."
+    },
+    {
+        "id": 34,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is object interning done for strings?",
+        "options": [
+            "To save memory and speed up comparisons",
+            "To enable mutability",
+            "To allow GC",
+            "To optimize sorting"
+        ],
+        "correct_index": 0,
+        "explanation": "Interned strings save memory and allow identity-based comparison."
+    },
+    {
+        "id": 35,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is small integer caching limited to a range (-5 to 256)?",
+        "options": [
+            "Arbitrary CPython choice balancing memory and speed",
+            "Due to reference counting limits",
+            "Due to GIL",
+            "Because Python cannot cache larger numbers"
+        ],
+        "correct_index": 0,
+        "explanation": "Limited range chosen for efficiency and to save memory."
+    },
+    {
+        "id": 36,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is weakref finalization useful?",
+        "options": [
+            "To prevent memory leaks in cycles",
+            "To speed up CPU-bound code",
+            "To avoid reference counting",
+            "To disable GIL"
+        ],
+        "correct_index": 0,
+        "explanation": "Weakrefs allow objects to be garbage collected even if weak references exist."
+    },
+    {
+        "id": 37,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why can reference cycles occur even with immutable objects?",
+        "options": [
+            "Immutable objects cannot form cycles",
+            "Only mutable objects can form cycles",
+            "Objects containing references to mutable objects can be immutable",
+            "Because GC ignores immutables"
+        ],
+        "correct_index": 2,
+        "explanation": "Immutable containers can hold references to mutable objects forming cycles."
+    },
+    {
+        "id": 38,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "How does Python's cyclic GC determine which generation to collect?",
+        "options": [
+            "Randomly",
+            "Based on thresholds of allocations and survivals",
+            "Only old generation",
+            "All objects equally"
+        ],
+        "correct_index": 1,
+        "explanation": "GC tracks object generations and triggers collection when thresholds are exceeded."
+    },
+    {
+        "id": 39,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is passing mutable default arguments dangerous?",
+        "options": [
+            "It increases GIL usage",
+            "It can lead to shared state across function calls",
+            "It causes GC to fail",
+            "It breaks reference counting"
+        ],
+        "correct_index": 1,
+        "explanation": "Default mutable arguments are shared between calls, often causing bugs."
+    },
+    {
+        "id": 40,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "How does the GIL interact with C extensions that release it?",
+        "options": [
+            "C extensions can run in parallel if they release GIL",
+            "GIL cannot be released",
+            "It slows down Python",
+            "It increases memory usage"
+        ],
+        "correct_index": 0,
+        "explanation": "Extensions that release the GIL allow true parallel execution in native code."
+    },
+    {
+        "id": 41,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why are lists faster than linked lists for random access in Python?",
+        "options": [
+            "Because lists are contiguous in memory",
+            "Because lists are immutable",
+            "Because GIL optimizes them",
+            "Because they use obmalloc"
+        ],
+        "correct_index": 0,
+        "explanation": "Python lists are dynamic arrays, providing O(1) random access."
+    },
+    {
+        "id": 42,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "How does Python's memory model handle object alignment?",
+        "options": [
+            "By using word alignment rules",
+            "By ignoring alignment",
+            "By using hash-based allocation",
+            "By placing all objects on stack"
+        ],
+        "correct_index": 0,
+        "explanation": "CPython ensures object memory alignment for efficient access."
+    },
+    {
+        "id": 43,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "What is the role of PyObject_Malloc?",
+        "options": [
+            "Allocates memory for Python objects",
+            "Frees memory",
+            "Increments reference count",
+            "Runs garbage collector"
+        ],
+        "correct_index": 0,
+        "explanation": "PyObject_Malloc is used by CPython to allocate memory for objects."
+    },
+    {
+        "id": 44,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is async code less affected by the GIL?",
+        "options": [
+            "Because only one task runs",
+            "Because tasks release GIL when awaiting IO",
+            "Because reference counts are ignored",
+            "Because CPython removes GIL in async"
+        ],
+        "correct_index": 1,
+        "explanation": "Awaiting IO releases the GIL allowing other tasks to run concurrently."
+    },
+    {
+        "id": 45,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is the CPython memory allocator not thread-safe per se?",
+        "options": [
+            "It relies on GIL for thread safety",
+            "It uses locks internally",
+            "It disables threads",
+            "It uses multiprocessing"
+        ],
+        "correct_index": 0,
+        "explanation": "obmalloc relies on the GIL for thread safety."
+    },
+    {
+        "id": 46,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is identity comparison faster than equality check?",
+        "options": [
+            "Because it checks reference pointer only",
+            "Because it computes hash",
+            "Because it releases GIL",
+            "Because equality is skipped in small objects"
+        ],
+        "correct_index": 0,
+        "explanation": "Identity comparison just compares object memory addresses."
+    },
+    {
+        "id": 47,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "How can cyclic references lead to memory leaks in Python?",
+        "options": [
+            "They prevent GC if __del__ is defined",
+            "They disable GIL",
+            "They increase performance",
+            "They prevent shallow copies"
+        ],
+        "correct_index": 0,
+        "explanation": "Objects with __del__ in cycles are not collected, causing leaks."
+    },
+    {
+        "id": 48,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is copying a tuple shallow by default?",
+        "options": [
+            "Because tuples are immutable",
+            "Because tuples are mutable",
+            "Because GIL prevents copying",
+            "Because memoryview is used"
+        ],
+        "correct_index": 0,
+        "explanation": "Tuples are immutable; copying duplicates references to contained objects."
+    },
+    {
+        "id": 49,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is __slots__ used in Python classes?",
+        "options": [
+            "To save memory by avoiding __dict__",
+            "To enable multiple inheritance",
+            "To prevent garbage collection",
+            "To optimize threading"
+        ],
+        "correct_index": 0,
+        "explanation": "__slots__ saves memory by storing attributes in a fixed layout instead of __dict__."
+    },
+    {
+        "id": 50,
+        "category": "python_internals",
+        "difficulty": "hard",
+        "question": "Why is the Python memory model important for extension developers?",
+        "options": [
+            "To understand object lifetime and reference counts",
+            "To increase GIL usage",
+            "To remove cyclic GC",
+            "To manage stack allocation"
+        ],
+        "correct_index": 0,
+        "explanation": "Extension developers must manage reference counts correctly to avoid leaks or crashes."
+    }
+]

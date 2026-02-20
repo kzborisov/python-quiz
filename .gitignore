@@ -1,0 +1,28 @@
+# Node / React
+node_modules/
+dist/
+build/
+.vite/
+coverage/
+
+# Python / Flask
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+instance/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# Shared
+.env
+.env.local
+.env.*.local
+.DS_Store
+*.log

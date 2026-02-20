@@ -1,0 +1,562 @@
+[
+    {
+        "id": 1,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Explain how Python decorators work internally.",
+        "options": [
+            "They replace a function with another callable at runtime",
+            "They are executed at call time",
+            "They create new threads",
+            "They modify the GIL"
+        ],
+        "correct_index": 0,
+        "explanation": "Decorators wrap a function or class, returning a new callable object."
+    },
+    {
+        "id": 2,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "What is the difference between a function decorator and a class decorator?",
+        "options": [
+            "Function decorators wrap functions, class decorators wrap classes",
+            "They are identical",
+            "Class decorators can only modify methods",
+            "Function decorators cannot take arguments"
+        ],
+        "correct_index": 0,
+        "explanation": "Function decorators wrap functions, class decorators receive a class object and return a modified class."
+    },
+    {
+        "id": 3,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How do context managers work with __enter__ and __exit__?",
+        "options": [
+            "__enter__ runs at start, __exit__ at exit of with block",
+            "__enter__ runs at exit, __exit__ at start",
+            "They are only for file objects",
+            "They prevent exceptions"
+        ],
+        "correct_index": 0,
+        "explanation": "__enter__ is called when entering the with block, __exit__ is called on block exit, even on exceptions."
+    },
+    {
+        "id": 4,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Explain the difference between a generator and an iterator.",
+        "options": [
+            "Generators yield values lazily, iterators implement __next__",
+            "Iterators are lazy, generators are not",
+            "Generators store all values in memory",
+            "Iterators cannot be looped over"
+        ],
+        "correct_index": 0,
+        "explanation": "Generators produce values on demand using yield; iterators must implement __iter__ and __next__."
+    },
+    {
+        "id": 5,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "What is the difference between __str__ and __repr__?",
+        "options": [
+            "__str__ is user-friendly, __repr__ is developer-focused",
+            "__repr__ is user-friendly, __str__ is developer-focused",
+            "They are always identical",
+            "__repr__ cannot be implemented in Python"
+        ],
+        "correct_index": 0,
+        "explanation": "__str__ returns a readable string, __repr__ returns a detailed representation for debugging."
+    },
+    {
+        "id": 6,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Compare dataclasses vs namedtuple vs pydantic for structured data.",
+        "options": [
+            "Dataclasses are mutable, namedtuple immutable, pydantic adds validation",
+            "Namedtuple is mutable, dataclasses immutable",
+            "Pydantic is slower than dataclasses and has no validation",
+            "Dataclasses cannot have defaults"
+        ],
+        "correct_index": 0,
+        "explanation": "Dataclasses are mutable by default, namedtuples are immutable, pydantic adds validation and type enforcement."
+    },
+    {
+        "id": 7,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Why might threading not improve CPU-bound Python code?",
+        "options": [
+            "Because of the GIL preventing parallel bytecode execution",
+            "Because Python cannot run threads",
+            "Because threads do not share memory",
+            "Because threading slows reference counting"
+        ],
+        "correct_index": 0,
+        "explanation": "CPU-bound threads are limited by the GIL; only one executes Python bytecode at a time."
+    },
+    {
+        "id": 8,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How does multiprocessing overcome the GIL?",
+        "options": [
+            "By creating separate processes with their own Python interpreter",
+            "By disabling GIL in main process",
+            "By using threads internally",
+            "By using JIT compilation"
+        ],
+        "correct_index": 0,
+        "explanation": "Each process has its own Python interpreter and GIL, allowing true parallel execution."
+    },
+    {
+        "id": 9,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Explain asyncio's event loop and how tasks are scheduled.",
+        "options": [
+            "Event loop runs coroutines, switching on await or IO",
+            "Each coroutine runs in its own thread",
+            "Event loop prevents garbage collection",
+            "Event loop runs only synchronous code"
+        ],
+        "correct_index": 0,
+        "explanation": "Asyncio uses an event loop to schedule coroutines, switching execution when awaiting IO or timeouts."
+    },
+    {
+        "id": 10,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "When should you use await vs run_in_executor?",
+        "options": [
+            "Use await for coroutines, run_in_executor for blocking CPU code",
+            "Use await for threads, run_in_executor for coroutines",
+            "They are identical",
+            "Never use run_in_executor"
+        ],
+        "correct_index": 0,
+        "explanation": "await pauses the coroutine until the awaited task completes; run_in_executor offloads blocking calls to threads or processes."
+    },
+    {
+        "id": 21,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How do you handle cancellation of coroutines in asyncio?",
+        "options": [
+            "By catching asyncio.CancelledError inside the coroutine",
+            "By using a thread",
+            "By removing GIL",
+            "By using time.sleep"
+        ],
+        "correct_index": 0,
+        "explanation": "CancelledError can be caught to perform cleanup when a coroutine is cancelled."
+    },
+    {
+        "id": 22,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "What is the difference between asyncio.gather() and asyncio.wait()?",
+        "options": [
+            "gather returns results in order, wait returns sets of done/pending",
+            "wait blocks threads, gather does not",
+            "gather is synchronous, wait asynchronous",
+            "They are identical"
+        ],
+        "correct_index": 0,
+        "explanation": "gather returns results of coroutines in order; wait returns two sets of futures: done and pending."
+    },
+    {
+        "id": 23,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Explain the difference between __getattr__ and __getattribute__.",
+        "options": [
+            "__getattribute__ intercepts all attribute access, __getattr__ only missing ones",
+            "__getattr__ intercepts all attributes, __getattribute__ only missing ones",
+            "They are identical",
+            "__getattr__ disables GIL"
+        ],
+        "correct_index": 0,
+        "explanation": "__getattribute__ is called for every attribute access; __getattr__ is called only if the attribute does not exist."
+    },
+    {
+        "id": 24,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How do you implement a decorator that takes arguments?",
+        "options": [
+            "By adding another nested function to accept decorator parameters",
+            "By using functools.wraps only",
+            "By defining __call__",
+            "By using async def"
+        ],
+        "correct_index": 0,
+        "explanation": "A decorator with parameters requires an extra function layer to capture the arguments."
+    },
+    {
+        "id": 25,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "What are the internals of functools.lru_cache?",
+        "options": [
+            "It stores function arguments and results in a dictionary with a linked list for LRU order",
+            "It creates threads for caching",
+            "It disables GC",
+            "It only caches immutable functions"
+        ],
+        "correct_index": 0,
+        "explanation": "lru_cache maintains a dict of arguments to results and a double-linked list to implement LRU eviction."
+    },
+    {
+        "id": 26,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How do you properly close a generator?",
+        "options": [
+            "By calling generator.close() to raise GeneratorExit",
+            "By deleting the generator",
+            "By await",
+            "By using threading"
+        ],
+        "correct_index": 0,
+        "explanation": "generator.close() raises GeneratorExit inside the generator, allowing cleanup code to run."
+    },
+    {
+        "id": 27,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "What is the difference between async for and regular for loops?",
+        "options": [
+            "async for waits for async iterators, regular for loops over synchronous iterables",
+            "They are identical",
+            "async for is multithreaded",
+            "Regular for disables GIL"
+        ],
+        "correct_index": 0,
+        "explanation": "async for requires an object implementing __aiter__ and __anext__, allowing asynchronous iteration."
+    },
+    {
+        "id": 28,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How do you implement async context managers?",
+        "options": [
+            "By defining __aenter__ and __aexit__",
+            "By using regular __enter__ and __exit__",
+            "By creating a thread",
+            "By disabling GIL"
+        ],
+        "correct_index": 0,
+        "explanation": "Async context managers define __aenter__ and __aexit__ for use with 'async with'."
+    },
+    {
+        "id": 29,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How does Python handle exceptions in chained coroutines?",
+        "options": [
+            "The exception propagates to the awaiting coroutine",
+            "It is ignored",
+            "It creates a new thread",
+            "GIL stops the exception"
+        ],
+        "correct_index": 0,
+        "explanation": "Exceptions in a coroutine propagate to the code that awaited it, unless caught."
+    },
+    {
+        "id": 30,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Why use contextlib.ExitStack?",
+        "options": [
+            "To dynamically enter multiple context managers",
+            "To run threads",
+            "To disable GC",
+            "To create async loops"
+        ],
+        "correct_index": 0,
+        "explanation": "ExitStack allows entering an arbitrary number of context managers dynamically and ensures proper exit."
+    },
+    {
+        "id": 31,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How can you safely share resources between threads?",
+        "options": [
+            "Using locks, events, semaphores",
+            "By sharing mutable objects without locks",
+            "By disabling GIL",
+            "By using async only"
+        ],
+        "correct_index": 0,
+        "explanation": "Synchronization primitives prevent race conditions when multiple threads access shared resources."
+    },
+    {
+        "id": 32,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How does async iterator protocol differ from normal iteration?",
+        "options": [
+            "Async iterators implement __aiter__ and __anext__, returning awaitables",
+            "They are identical",
+            "Async iterators use threads",
+            "They disable GC"
+        ],
+        "correct_index": 0,
+        "explanation": "Async iterators return awaitables from __anext__, allowing asynchronous consumption."
+    },
+    {
+        "id": 33,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "What happens if a coroutine raises an exception after being awaited with asyncio.gather(..., return_exceptions=True)?",
+        "options": [
+            "The exception is captured and returned as a result",
+            "It stops the event loop",
+            "It creates a thread",
+            "It disables GIL"
+        ],
+        "correct_index": 0,
+        "explanation": "return_exceptions=True ensures all results are returned; exceptions are included instead of propagated."
+    },
+    {
+        "id": 34,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How does Pydantic validation affect performance in large datasets?",
+        "options": [
+            "It can be costly due to deep validation, so consider parsing in batches or using validate_assignment selectively",
+            "It is always fast",
+            "It disables threads",
+            "It removes GIL"
+        ],
+        "correct_index": 0,
+        "explanation": "Pydantic validates recursively and can be slower for many objects; performance considerations are needed for large datasets."
+    },
+    {
+        "id": 35,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How do you prevent blocking I/O from stalling asyncio event loop?",
+        "options": [
+            "Run blocking I/O in executor threads",
+            "Use sleep()",
+            "Disable GIL",
+            "Use generators"
+        ],
+        "correct_index": 0,
+        "explanation": "Blocking I/O should be offloaded to threads or processes to avoid freezing the event loop."
+    },
+    {
+        "id": 36,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "What is a metaclass and how can it be used with decorators?",
+        "options": [
+            "Metaclasses control class creation and can apply decorators automatically to methods",
+            "Metaclasses are threads",
+            "They are identical to decorators",
+            "They remove GIL"
+        ],
+        "correct_index": 0,
+        "explanation": "Metaclasses allow modification of class definitions at creation time, including method wrapping."
+    },
+    {
+        "id": 37,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Explain memory and GIL considerations for asyncio.",
+        "options": [
+            "Asyncio reduces memory overhead compared to threads but still shares GIL among tasks",
+            "Asyncio disables GIL",
+            "Each coroutine gets its own memory space",
+            "It requires multiple threads always"
+        ],
+        "correct_index": 0,
+        "explanation": "Asyncio uses a single thread with many coroutines, sharing GIL but reducing memory compared to threads."
+    },
+    {
+        "id": 38,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How do you implement a thread-safe cache for a function?",
+        "options": [
+            "Use locks or concurrent dictionaries to protect access",
+            "Use regular dict without locks",
+            "Use asyncio",
+            "Use multiprocessing only"
+        ],
+        "correct_index": 0,
+        "explanation": "Thread-safe caching requires synchronization primitives to avoid race conditions."
+    },
+    {
+        "id": 39,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Explain generator.send() usage.",
+        "options": [
+            "It resumes a generator and sends a value that becomes the result of yield expression",
+            "It closes the generator",
+            "It deletes the generator",
+            "It creates a thread"
+        ],
+        "correct_index": 0,
+        "explanation": "generator.send(value) resumes the generator and the yield expression evaluates to value sent."
+    },
+    {
+        "id": 40,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Difference between dataclass frozen=True and init=False?",
+        "options": [
+            "frozen=True makes instances immutable; init=False skips __init__ generation",
+            "They are identical",
+            "frozen disables GC",
+            "init=False disables attributes"
+        ],
+        "correct_index": 0,
+        "explanation": "frozen prevents attribute assignment; init=False prevents generation of the __init__ method."
+    },
+    {
+        "id": 41,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How do you chain coroutines with exception propagation?",
+        "options": [
+            "Await each coroutine and let exceptions propagate naturally",
+            "Use threads for each coroutine",
+            "Exceptions are ignored in async",
+            "Disable GIL"
+        ],
+        "correct_index": 0,
+        "explanation": "Awaiting coroutines sequentially or with gather allows exceptions to propagate to the awaiting context."
+    },
+    {
+        "id": 42,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Explain asyncio.run() behavior internally.",
+        "options": [
+            "It creates a new event loop, runs the main coroutine, closes the loop",
+            "It creates a thread per coroutine",
+            "It disables GIL",
+            "It blocks all threads"
+        ],
+        "correct_index": 0,
+        "explanation": "asyncio.run sets up a new event loop, executes the coroutine, and closes the loop."
+    },
+    {
+        "id": 43,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "When should you use async with vs await inside async functions?",
+        "options": [
+            "async with is for async context managers, await is for coroutines",
+            "They are identical",
+            "async with disables GIL",
+            "await disables GC"
+        ],
+        "correct_index": 0,
+        "explanation": "async with is used for resources that require asynchronous enter/exit, await is for pausing coroutines."
+    },
+    {
+        "id": 44,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Explain the difference between threading.Lock and asyncio.Lock.",
+        "options": [
+            "threading.Lock blocks threads, asyncio.Lock blocks coroutines cooperatively",
+            "They are identical",
+            "asyncio.Lock disables GIL",
+            "threading.Lock is asynchronous"
+        ],
+        "correct_index": 0,
+        "explanation": "threading.Lock blocks the OS thread until released, asyncio.Lock suspends only the coroutine, allowing other coroutines to run."
+    },
+    {
+        "id": 45,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "What is the role of __slots__ in classes?",
+        "options": [
+            "To prevent dynamic creation of attributes and reduce memory usage",
+            "To create threads",
+            "To disable garbage collection",
+            "To implement async coroutines"
+        ],
+        "correct_index": 0,
+        "explanation": "__slots__ tells Python to preallocate space for a fixed set of attributes, saving memory and preventing __dict__ creation."
+    },
+    {
+        "id": 46,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How does Python’s GIL affect concurrency with CPU-bound vs IO-bound tasks?",
+        "options": [
+            "CPU-bound threads are limited by GIL, IO-bound can still benefit from threading",
+            "GIL blocks all threads",
+            "GIL only affects async code",
+            "GIL only affects multiprocessing"
+        ],
+        "correct_index": 0,
+        "explanation": "GIL allows only one thread to execute Python bytecode at a time, so CPU-bound threads don’t run in parallel, but IO-bound threads release the GIL during IO operations."
+    },
+    {
+        "id": 47,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "Explain generator.send() and generator.throw() usage.",
+        "options": [
+            "send() resumes generator with a value; throw() raises an exception at yield",
+            "send() closes the generator; throw() deletes it",
+            "They are identical",
+            "They create threads"
+        ],
+        "correct_index": 0,
+        "explanation": "send(value) resumes a generator and injects a value into the yield expression, throw(exception) raises the exception inside the generator."
+    },
+    {
+        "id": 48,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How do you implement a thread-safe LRU cache in Python?",
+        "options": [
+            "Use threading.Lock with a dict or collections.OrderedDict for eviction order",
+            "Use regular dict",
+            "Use asyncio.Lock",
+            "Use multiprocessing only"
+        ],
+        "correct_index": 0,
+        "explanation": "Thread-safe caching requires locks to avoid race conditions, combined with an ordered dict to maintain least-recently-used eviction."
+    },
+    {
+        "id": 49,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "What are key considerations when using async code with database connections?",
+        "options": [
+            "Use async drivers, ensure connection pooling, avoid blocking calls",
+            "Use threads for all queries",
+            "Databases always run in background threads",
+            "Async code disables transactions"
+        ],
+        "correct_index": 0,
+        "explanation": "Async database access requires non-blocking drivers, proper connection pooling, and avoiding synchronous calls that block the event loop."
+    },
+    {
+        "id": 50,
+        "category": "advanced_python",
+        "difficulty": "hard",
+        "question": "How do you avoid callback hell when using asyncio with multiple coroutines?",
+        "options": [
+            "Use async/await syntax, tasks, and asyncio.gather instead of nested callbacks",
+            "Use threads for all callbacks",
+            "Disable GIL",
+            "Callbacks are unavoidable"
+        ],
+        "correct_index": 0,
+        "explanation": "Using async/await and higher-level functions like gather allows writing linear, readable code without deeply nested callbacks."
+    }
+]

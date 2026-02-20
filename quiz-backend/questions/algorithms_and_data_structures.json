@@ -1,0 +1,702 @@
+[
+    {
+        "id": 1,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Explain the two-pointer technique and provide a scenario where it's optimal.",
+        "options": [
+            "Two pointers iterate from both ends to solve problems on sorted arrays or subarrays",
+            "It creates threads for each pointer",
+            "It duplicates arrays in memory",
+            "It uses recursion exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Two pointers are efficient for problems involving sorted arrays, pair sums, or moving windows with O(n) time complexity."
+    },
+    {
+        "id": 2,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "What is the sliding window technique and when is it used?",
+        "options": [
+            "It maintains a subset of elements in a window and slides over the array for optimization",
+            "It creates multiple threads",
+            "It only applies to linked lists",
+            "It duplicates all elements"
+        ],
+        "correct_index": 0,
+        "explanation": "Sliding window allows tracking sums, counts, or patterns over a contiguous range efficiently."
+    },
+    {
+        "id": 3,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "How do hash maps improve algorithm performance?",
+        "options": [
+            "Provide O(1) average lookup, insert, and delete for solving search/count problems",
+            "They reduce memory usage always",
+            "They automatically sort keys",
+            "They prevent recursion"
+        ],
+        "correct_index": 0,
+        "explanation": "Hash maps allow constant-time operations, making them suitable for frequency counting, lookups, and de-duplication."
+    },
+    {
+        "id": 4,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Explain the stack data structure and its common use cases.",
+        "options": [
+            "Stack follows LIFO, used in DFS, expression evaluation, undo operations",
+            "Stack allows random access",
+            "Stack is always implemented with arrays",
+            "Stack prevents recursion"
+        ],
+        "correct_index": 0,
+        "explanation": "Stack uses Last-In-First-Out behavior, critical in DFS traversal, backtracking, and managing function calls."
+    },
+    {
+        "id": 5,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "What is the time complexity of binary search and its prerequisites?",
+        "options": [
+            "O(log n) on sorted arrays or lists",
+            "O(n)",
+            "O(n log n)",
+            "O(1) always"
+        ],
+        "correct_index": 0,
+        "explanation": "Binary search requires a sorted array or list and halves the search space each step, resulting in logarithmic time."
+    },
+    {
+        "id": 6,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Explain Depth-First Search (DFS) and its differences from Breadth-First Search (BFS).",
+        "options": [
+            "DFS explores as deep as possible first using stack/recursion; BFS explores level by level using a queue",
+            "DFS uses queue, BFS uses stack",
+            "DFS is only for trees, BFS only for graphs",
+            "They are identical"
+        ],
+        "correct_index": 0,
+        "explanation": "DFS uses stack (or recursion) to go deep, BFS uses queue to explore neighbors level-wise."
+    },
+    {
+        "id": 7,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Describe the Top K Frequent Elements problem and optimal approach.",
+        "options": [
+            "Use a hash map to count frequency and a heap to track top K elements",
+            "Sort the array and pick first K",
+            "Use recursion only",
+            "Use BFS traversal"
+        ],
+        "correct_index": 0,
+        "explanation": "Count frequencies in O(n), maintain a min-heap of size K to track top elements efficiently."
+    },
+    {
+        "id": 8,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "How do you group anagrams efficiently?",
+        "options": [
+            "Use a hash map with sorted strings or character counts as keys",
+            "Compare each pair of strings manually",
+            "Sort entire array repeatedly",
+            "Use DFS on strings"
+        ],
+        "correct_index": 0,
+        "explanation": "Transform strings into a canonical key (sorted or count tuple) and group using a dictionary for O(n k log k) or O(n k) complexity."
+    },
+    {
+        "id": 9,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Explain the Merge Intervals problem and its optimal solution.",
+        "options": [
+            "Sort intervals by start, iterate and merge overlapping intervals",
+            "Use DFS on intervals",
+            "Use hash map only",
+            "Compare all pairs naively"
+        ],
+        "correct_index": 0,
+        "explanation": "Sorting first ensures linear merging of overlapping intervals without nested loops."
+    },
+    {
+        "id": 10,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "What is a valid palindrome check and its time complexity?",
+        "options": [
+            "Two pointers from start and end, O(n) time, O(1) space",
+            "Sort the string first",
+            "Use recursion only",
+            "Use a hash map exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Comparing characters from both ends allows O(n) time and constant extra space."
+    },
+    {
+        "id": 11,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Explain the Two Sum problem and an efficient solution.",
+        "options": [
+            "Use a hash map to store complements for O(n) solution",
+            "Use nested loops for O(n^2)",
+            "Use DFS traversal",
+            "Use a queue to store sums"
+        ],
+        "correct_index": 0,
+        "explanation": "Tracking complements in a hash map gives a single-pass O(n) solution for Two Sum."
+    },
+    {
+        "id": 12,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "How do you solve Two Sum II (sorted array) optimally?",
+        "options": [
+            "Use two pointers from both ends to find pair sums in O(n)",
+            "Use hash map only",
+            "Use recursion",
+            "Use heap for sum tracking"
+        ],
+        "correct_index": 0,
+        "explanation": "Two-pointer technique works directly on sorted arrays with linear time."
+    },
+    {
+        "id": 13,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Longest Substring Without Repeating Characters – optimal approach?",
+        "options": [
+            "Use sliding window with a hash set for O(n) time",
+            "Use nested loops for O(n^2)",
+            "Use recursion",
+            "Use stack exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Sliding window ensures O(n) traversal while maintaining uniqueness in the window."
+    },
+    {
+        "id": 14,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "How do you find the first occurrence of a target in a sorted array?",
+        "options": [
+            "Binary search with boundary checks for first occurrence",
+            "Linear search",
+            "Use DFS",
+            "Use stack"
+        ],
+        "correct_index": 0,
+        "explanation": "Modified binary search adjusts mid comparison to find the leftmost target index."
+    },
+    {
+        "id": 15,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Find last occurrence of a target in a sorted array efficiently.",
+        "options": [
+            "Binary search modified to find rightmost index",
+            "Use hash map",
+            "DFS traversal",
+            "Linear search only"
+        ],
+        "correct_index": 0,
+        "explanation": "Binary search can be tweaked to find rightmost occurrence by adjusting mid pointer movement."
+    },
+    {
+        "id": 16,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Explain subarray sum equals K using hash maps.",
+        "options": [
+            "Store cumulative sum frequencies in hash map for O(n) solution",
+            "Use nested loops",
+            "Use sliding window only",
+            "Use stack"
+        ],
+        "correct_index": 0,
+        "explanation": "Cumulative sum differences identify subarrays in linear time with a hash map."
+    },
+    {
+        "id": 17,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Find maximum sum subarray of size K – optimal technique?",
+        "options": [
+            "Sliding window to maintain sum of current window",
+            "Nested loops",
+            "Heap only",
+            "DFS traversal"
+        ],
+        "correct_index": 0,
+        "explanation": "Sliding window updates sum incrementally in O(n) rather than recomputing each window."
+    },
+    {
+        "id": 18,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Next greater element problem – efficient approach?",
+        "options": [
+            "Use a stack to track candidates and pop when current element is greater",
+            "Nested loops only",
+            "Use BFS",
+            "Use hash map exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Stack allows processing in O(n) by storing candidates and resolving when larger elements are found."
+    },
+    {
+        "id": 19,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "How to merge K sorted arrays efficiently?",
+        "options": [
+            "Use min-heap to extract the smallest element among K arrays",
+            "Concatenate and sort",
+            "DFS traversal",
+            "Use hash map"
+        ],
+        "correct_index": 0,
+        "explanation": "Heap ensures O(n log k) complexity, better than concatenating and sorting."
+    },
+    {
+        "id": 20,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Explain DFS on a 2D grid to find connected components.",
+        "options": [
+            "Use recursion or stack, mark visited cells, explore neighbors",
+            "Use BFS only",
+            "Use hash map exclusively",
+            "DFS is not applicable on grids"
+        ],
+        "correct_index": 0,
+        "explanation": "DFS explores each cell, recursively or with a stack, marking visited nodes to count components."
+    },
+    {
+        "id": 21,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Longest increasing subsequence – optimal approach?",
+        "options": [
+            "Use dynamic programming with binary search to achieve O(n log n)",
+            "Use nested loops for O(n^2)",
+            "DFS only",
+            "Use stack exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "DP with binary search efficiently maintains subsequence ends for O(n log n) solution."
+    },
+    {
+        "id": 22,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Median of two sorted arrays – approach?",
+        "options": [
+            "Binary search on shorter array to partition both arrays",
+            "Merge both arrays then pick median",
+            "DFS on arrays",
+            "Use hash map"
+        ],
+        "correct_index": 0,
+        "explanation": "Partitioning with binary search gives O(log min(n, m)) time instead of full merge."
+    },
+    {
+        "id": 23,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Trapping rain water problem – approach and complexity?",
+        "options": [
+            "Use two pointers from both ends with O(n) time, O(1) space",
+            "Use nested loops O(n^2)",
+            "Use stack only",
+            "Use hash map"
+        ],
+        "correct_index": 0,
+        "explanation": "Two-pointer approach maintains left and right max boundaries for linear-time solution."
+    },
+    {
+        "id": 24,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "How to detect cycles in a linked list?",
+        "options": [
+            "Use Floyd’s Tortoise and Hare (fast and slow pointers)",
+            "Use hash map only",
+            "DFS traversal",
+            "Recursion without pointers"
+        ],
+        "correct_index": 0,
+        "explanation": "Fast and slow pointers allow O(1) space detection of cycles efficiently."
+    },
+    {
+        "id": 25,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Find the maximum area of histogram – optimal approach?",
+        "options": [
+            "Use a stack to track indices and calculate areas in O(n)",
+            "Nested loops O(n^2)",
+            "Use DFS",
+            "Use hash map"
+        ],
+        "correct_index": 0,
+        "explanation": "Stack keeps track of bars in ascending order; area calculated when a lower bar is found."
+    },
+    {
+        "id": 26,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Explain how to implement a min-stack with O(1) push, pop, and min retrieval.",
+        "options": [
+            "Use an auxiliary stack to track current min",
+            "Use hash map only",
+            "Use nested loops",
+            "Use queue exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Auxiliary stack stores min values at each state to allow constant-time retrieval."
+    },
+    {
+        "id": 27,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Implement Kth largest element in an array – approach?",
+        "options": [
+            "Use a min-heap of size K",
+            "Sort array then pick Kth",
+            "DFS traversal",
+            "Use stack"
+        ],
+        "correct_index": 0,
+        "explanation": "Heap maintains top K elements efficiently without full sort (O(n log k))."
+    },
+    {
+        "id": 28,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "How do you rotate an array efficiently?",
+        "options": [
+            "Reverse the whole array, then reverse parts",
+            "Nested loops",
+            "Use stack only",
+            "Use DFS"
+        ],
+        "correct_index": 0,
+        "explanation": "Reversal trick rotates array in-place with O(n) time and O(1) space."
+    },
+    {
+        "id": 29,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "How do you check if a graph is bipartite?",
+        "options": [
+            "Use BFS or DFS to try coloring nodes with two colors",
+            "DFS only",
+            "Hash map only",
+            "Use stack exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "If neighboring nodes cannot be colored differently, graph is not bipartite."
+    },
+    {
+        "id": 30,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Detect cycle in a directed graph – approach?",
+        "options": [
+            "Use DFS with recursion stack tracking",
+            "Hash map only",
+            "BFS only",
+            "Stack exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "DFS recursion stack detects back edges which indicate cycles."
+    },
+    {
+        "id": 31,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Topological sort – approach and applications?",
+        "options": [
+            "Use DFS post-order or Kahn’s algorithm; used in scheduling dependencies",
+            "DFS only",
+            "BFS only",
+            "Use hash map exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "DFS finishes ordering after exploring dependencies; Kahn’s algorithm uses in-degree queue."
+    },
+    {
+        "id": 32,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Find number of islands in a 2D grid – approach?",
+        "options": [
+            "Use DFS/BFS on each unvisited land cell",
+            "Use hash map only",
+            "Nested loops O(n^2) naive",
+            "Use stack exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "DFS/BFS marks visited cells to avoid recounting, O(m*n) time."
+    },
+    {
+        "id": 33,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Implement LRU Cache – approach?",
+        "options": [
+            "Use OrderedDict or HashMap + Doubly Linked List",
+            "Use nested loops",
+            "DFS traversal",
+            "Use stack only"
+        ],
+        "correct_index": 0,
+        "explanation": "OrderedDict maintains order; combination with hashmap allows O(1) operations."
+    },
+    {
+        "id": 34,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Find peak element in an array – approach?",
+        "options": [
+            "Binary search to find element greater than neighbors",
+            "Nested loops",
+            "DFS only",
+            "Use hash map"
+        ],
+        "correct_index": 0,
+        "explanation": "Binary search halves search space, comparing middle element with neighbors."
+    },
+    {
+        "id": 35,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "How to implement interval intersection between two lists?",
+        "options": [
+            "Use two pointers to traverse both sorted lists",
+            "Nested loops O(n*m)",
+            "DFS only",
+            "Use hash map exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Two pointers traverse sorted intervals linearly to find overlaps efficiently."
+    },
+    {
+        "id": 36,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "How do you find the maximum sum rectangle in a 2D matrix?",
+        "options": [
+            "Use Kadane’s algorithm on all possible row pairs",
+            "Nested loops only",
+            "DFS only",
+            "Use stack exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Collapse rows and apply 1D Kadane’s algorithm on column sums for O(n^3)."
+    },
+    {
+        "id": 37,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Merge K sorted linked lists – approach?",
+        "options": [
+            "Use min-heap to pick smallest head among lists",
+            "Concatenate and sort",
+            "DFS traversal",
+            "Use stack only"
+        ],
+        "correct_index": 0,
+        "explanation": "Heap ensures efficient selection of the next smallest node with O(n log k)."
+    },
+    {
+        "id": 38,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Sliding window maximum – approach?",
+        "options": [
+            "Use deque to track indices of useful elements",
+            "Nested loops only",
+            "Use stack",
+            "DFS exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Deque allows O(n) processing by maintaining decreasing elements indices."
+    },
+    {
+        "id": 39,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Check if two strings are scramble of each other – approach?",
+        "options": [
+            "Use recursive DP with memoization",
+            "Nested loops only",
+            "DFS only",
+            "Use stack exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Recursive checks with memoization avoid repeated computation for subproblems."
+    },
+    {
+        "id": 40,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Maximum product subarray – approach?",
+        "options": [
+            "Track max and min product ending at each index",
+            "Nested loops only",
+            "DFS exclusively",
+            "Use stack"
+        ],
+        "correct_index": 0,
+        "explanation": "Negative numbers require maintaining both max and min products for correct result."
+    },
+    {
+        "id": 41,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Detect cycle in undirected graph – approach?",
+        "options": [
+            "DFS with parent tracking",
+            "Hash map only",
+            "BFS only",
+            "Stack exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "If a visited neighbor is not the parent, a cycle exists."
+    },
+    {
+        "id": 42,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Minimum window substring – approach?",
+        "options": [
+            "Use sliding window and hashmap to track counts",
+            "Nested loops only",
+            "DFS exclusively",
+            "Use stack only"
+        ],
+        "correct_index": 0,
+        "explanation": "Hash map tracks required chars, window expands and shrinks to satisfy constraints efficiently."
+    },
+    {
+        "id": 43,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Implement Kth smallest element in BST – approach?",
+        "options": [
+            "In-order traversal with counter",
+            "DFS only",
+            "Use stack exclusively",
+            "Hash map only"
+        ],
+        "correct_index": 0,
+        "explanation": "In-order traversal yields sorted order; counting stops at Kth element."
+    },
+    {
+        "id": 44,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Clone a graph – approach?",
+        "options": [
+            "DFS or BFS with hashmap to track visited nodes",
+            "Nested loops only",
+            "Stack exclusively",
+            "Use recursion only"
+        ],
+        "correct_index": 0,
+        "explanation": "Hash map ensures each node is cloned once, avoiding infinite loops."
+    },
+    {
+        "id": 45,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Word ladder transformation – approach?",
+        "options": [
+            "BFS on word graph where edges differ by one character",
+            "DFS only",
+            "Hash map only",
+            "Stack exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "BFS finds shortest transformation path; hash map stores neighbors efficiently."
+    },
+    {
+        "id": 46,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Serialize and deserialize a binary tree – approach?",
+        "options": [
+            "Use preorder traversal with null markers",
+            "DFS only",
+            "Hash map only",
+            "Stack exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Preorder traversal with markers allows reconstruction of tree structure unambiguously."
+    },
+    {
+        "id": 47,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Largest rectangle in binary matrix – approach?",
+        "options": [
+            "Convert each row to histogram and apply max area histogram algorithm",
+            "Nested loops only",
+            "DFS only",
+            "Stack exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Each row represents a histogram; applying stack-based max area algorithm per row finds maximum rectangle."
+    },
+    {
+        "id": 48,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Find duplicate number in array of n+1 integers 1..n – approach?",
+        "options": [
+            "Floyd’s Tortoise and Hare cycle detection",
+            "Hash map only",
+            "Sort then check duplicates",
+            "Nested loops"
+        ],
+        "correct_index": 0,
+        "explanation": "Cycle detection treats values as pointers to detect repeating number without extra space."
+    },
+    {
+        "id": 49,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Trapping rain water II (2D) – approach?",
+        "options": [
+            "Use min-heap for boundary cells and BFS expansion",
+            "DFS only",
+            "Nested loops O(n^2)",
+            "Hash map exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Heap maintains lowest boundary; expand using BFS, calculating trapped water efficiently."
+    },
+    {
+        "id": 50,
+        "category": "algorithms_data_structures",
+        "difficulty": "hard",
+        "question": "Minimum cost path in weighted grid – approach?",
+        "options": [
+            "Use Dijkstra’s algorithm on grid nodes",
+            "DFS only",
+            "Nested loops",
+            "Stack exclusively"
+        ],
+        "correct_index": 0,
+        "explanation": "Each cell is a node; Dijkstra ensures shortest path cost considering cell weights."
+    }
+]

@@ -1,0 +1,702 @@
+[
+    {
+        "id": 1,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is using a mutable default argument dangerous?",
+        "options": [
+            "Defaults are evaluated at call time",
+            "Defaults are evaluated at definition time",
+            "Mutable arguments cannot be reused",
+            "Functions cannot store state"
+        ],
+        "correct_index": 1,
+        "explanation": "Default arguments are evaluated once at function definition time and reused across calls."
+    },
+    {
+        "id": 2,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is actually passed to a function in Python?",
+        "options": [
+            "A deep copy",
+            "A shallow copy",
+            "A reference to the object",
+            "A pointer to memory only"
+        ],
+        "correct_index": 2,
+        "explanation": "Python uses pass-by-object-reference semantics."
+    },
+    {
+        "id": 3,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What does list slicing return?",
+        "options": [
+            "The same list",
+            "A deep copy",
+            "A shallow copy",
+            "A generator"
+        ],
+        "correct_index": 2,
+        "explanation": "Slicing creates a new list but elements remain references."
+    },
+    {
+        "id": 4,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why must dictionary keys be immutable?",
+        "options": [
+            "To ensure stable hashing",
+            "To prevent resizing",
+            "To enable sorting",
+            "To reduce memory usage"
+        ],
+        "correct_index": 0,
+        "explanation": "Hash values must remain stable during the key's lifetime."
+    },
+    {
+        "id": 5,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "When can dictionary lookup degrade to O(n)?",
+        "options": [
+            "When resizing",
+            "When many hash collisions occur",
+            "When keys are strings",
+            "Never"
+        ],
+        "correct_index": 1,
+        "explanation": "Severe hash collisions can degrade performance."
+    },
+    {
+        "id": 6,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is list membership check O(n)?",
+        "options": [
+            "Because lists are sorted",
+            "Because lists are hash tables",
+            "Because lists require linear scan",
+            "Because lists use trees"
+        ],
+        "correct_index": 2,
+        "explanation": "Membership requires scanning elements sequentially."
+    },
+    {
+        "id": 7,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What happens with list multiplication like [[0]] * 3?",
+        "options": [
+            "Creates 3 independent lists",
+            "Creates 3 references to the same list",
+            "Raises error",
+            "Creates deep copies"
+        ],
+        "correct_index": 1,
+        "explanation": "List multiplication copies references, not objects."
+    },
+    {
+        "id": 8,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is using 'is' for value comparison unsafe?",
+        "options": [
+            "It compares equality",
+            "It compares identity",
+            "It forces copying",
+            "It hashes objects"
+        ],
+        "correct_index": 1,
+        "explanation": "'is' checks object identity, not value equality."
+    },
+    {
+        "id": 9,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is the amortized complexity of list append?",
+        "options": [
+            "O(n)",
+            "O(log n)",
+            "O(1)",
+            "O(n log n)"
+        ],
+        "correct_index": 2,
+        "explanation": "Resizing happens occasionally, making append amortized O(1)."
+    },
+    {
+        "id": 10,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is the complexity of inserting at index 0 in a list?",
+        "options": [
+            "O(1)",
+            "O(log n)",
+            "O(n)",
+            "O(n log n)"
+        ],
+        "correct_index": 2,
+        "explanation": "All elements must be shifted."
+    },
+    {
+        "id": 11,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why can floats be problematic as dictionary keys?",
+        "options": [
+            "They are mutable",
+            "Floating-point precision issues",
+            "They cannot be hashed",
+            "They change at runtime"
+        ],
+        "correct_index": 1,
+        "explanation": "Floating point precision can cause unexpected key mismatches."
+    },
+    {
+        "id": 12,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What does __hash__ depend on?",
+        "options": [
+            "Object memory address",
+            "Object immutability and equality definition",
+            "Object size",
+            "Garbage collector state"
+        ],
+        "correct_index": 1,
+        "explanation": "__hash__ must align with __eq__ contract."
+    },
+    {
+        "id": 13,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is tuple generally faster than list?",
+        "options": [
+            "It is immutable",
+            "It uses less memory",
+            "It avoids resizing overhead",
+            "All of the above"
+        ],
+        "correct_index": 3,
+        "explanation": "Tuples are immutable and more memory-efficient."
+    },
+    {
+        "id": 14,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is the complexity of set membership?",
+        "options": [
+            "O(1) average",
+            "O(n)",
+            "O(log n)",
+            "O(n log n)"
+        ],
+        "correct_index": 0,
+        "explanation": "Set membership is average O(1) due to hashing."
+    },
+    {
+        "id": 15,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is pop(0) expensive in lists?",
+        "options": [
+            "It reallocates memory",
+            "It shifts all elements",
+            "It sorts the list",
+            "It hashes elements"
+        ],
+        "correct_index": 1,
+        "explanation": "Removing first element requires shifting all others."
+    },
+    {
+        "id": 16,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is the cost of copying a list of size n?",
+        "options": [
+            "O(1)",
+            "O(log n)",
+            "O(n)",
+            "O(n log n)"
+        ],
+        "correct_index": 2,
+        "explanation": "Each element reference must be copied."
+    },
+    {
+        "id": 17,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why does sorted() guarantee stability?",
+        "options": [
+            "Because it uses quicksort",
+            "Because it uses Timsort",
+            "Because it hashes elements",
+            "Because lists are immutable"
+        ],
+        "correct_index": 1,
+        "explanation": "Python uses Timsort, which is stable."
+    },
+    {
+        "id": 18,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What happens if __eq__ is overridden but __hash__ is not?",
+        "options": [
+            "Nothing",
+            "Object becomes unhashable",
+            "Hash stays consistent",
+            "Memory leak occurs"
+        ],
+        "correct_index": 1,
+        "explanation": "Python disables __hash__ if __eq__ is overridden improperly."
+    },
+    {
+        "id": 19,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why are sets faster than lists for membership checks?",
+        "options": [
+            "They are sorted",
+            "They use hashing",
+            "They use trees",
+            "They are immutable"
+        ],
+        "correct_index": 1,
+        "explanation": "Sets use hash tables for O(1) lookup."
+    },
+    {
+        "id": 20,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is the space complexity of a dictionary?",
+        "options": [
+            "O(n)",
+            "O(log n)",
+            "O(1)",
+            "O(n log n)"
+        ],
+        "correct_index": 0,
+        "explanation": "Dictionary stores n key-value pairs."
+    },
+    {
+        "id": 21,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is the complexity of checking membership in a tuple?",
+        "options": [
+            "O(1)",
+            "O(log n)",
+            "O(n)",
+            "O(n log n)"
+        ],
+        "correct_index": 2,
+        "explanation": "Tuple membership requires linear scan."
+    },
+    {
+        "id": 22,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is list overallocation used?",
+        "options": [
+            "To reduce resizing frequency",
+            "To guarantee immutability",
+            "To reduce CPU usage",
+            "To shrink memory"
+        ],
+        "correct_index": 0,
+        "explanation": "Lists allocate extra space to avoid frequent resizing."
+    },
+    {
+        "id": 23,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What happens when two objects have same hash but are not equal?",
+        "options": [
+            "They overwrite each other",
+            "Dictionary stores both after equality check",
+            "Runtime error occurs",
+            "Hash changes"
+        ],
+        "correct_index": 1,
+        "explanation": "Hash collision triggers equality comparison."
+    },
+    {
+        "id": 24,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is deepcopy more expensive than shallow copy?",
+        "options": [
+            "It copies nested objects recursively",
+            "It rehashes objects",
+            "It duplicates memory addresses",
+            "It serializes objects"
+        ],
+        "correct_index": 0,
+        "explanation": "Deepcopy recursively copies nested structures."
+    },
+    {
+        "id": 25,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is truthy among empty containers?",
+        "options": [
+            "[]",
+            "{}",
+            "set()",
+            "None of them"
+        ],
+        "correct_index": 3,
+        "explanation": "All empty containers are falsy."
+    },
+    {
+        "id": 26,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is the cost of list.insert(0, x)?",
+        "options": [
+            "O(1)",
+            "O(n)",
+            "O(log n)",
+            "O(n log n)"
+        ],
+        "correct_index": 1,
+        "explanation": "Elements must be shifted."
+    },
+    {
+        "id": 27,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why are frozensets hashable?",
+        "options": [
+            "Because they are immutable",
+            "Because they use lists",
+            "Because they are ordered",
+            "Because they store memory address"
+        ],
+        "correct_index": 0,
+        "explanation": "Immutability allows stable hashing."
+    },
+    {
+        "id": 28,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What happens when a dict resizes?",
+        "options": [
+            "Rehashing occurs",
+            "Sorting occurs",
+            "Nothing",
+            "Garbage collection"
+        ],
+        "correct_index": 0,
+        "explanation": "Entries are rehashed into a larger table."
+    },
+    {
+        "id": 29,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is the complexity of deleting from a dict?",
+        "options": [
+            "O(1) average",
+            "O(n)",
+            "O(log n)",
+            "O(n log n)"
+        ],
+        "correct_index": 0,
+        "explanation": "Deletion is average O(1)."
+    },
+    {
+        "id": 30,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why can circular references be problematic?",
+        "options": [
+            "Reference counting cannot collect them alone",
+            "They crash interpreter",
+            "They disable hashing",
+            "They slow sorting"
+        ],
+        "correct_index": 0,
+        "explanation": "Reference cycles require cyclic GC."
+    },
+    {
+        "id": 31,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is the cost of converting list to set?",
+        "options": [
+            "O(n)",
+            "O(log n)",
+            "O(1)",
+            "O(n log n)"
+        ],
+        "correct_index": 0,
+        "explanation": "Each element must be hashed."
+    },
+    {
+        "id": 32,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why does tuple allow mutable elements but dict key does not?",
+        "options": [
+            "Tuple ignores inner mutability",
+            "Tuple checks only outer immutability",
+            "Dict enforces full hashability",
+            "No difference"
+        ],
+        "correct_index": 2,
+        "explanation": "Dictionary requires full hashability."
+    },
+    {
+        "id": 33,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What happens if you modify an object used as dict key?",
+        "options": [
+            "Nothing",
+            "Lookup may fail",
+            "Key auto-updates",
+            "Runtime error"
+        ],
+        "correct_index": 1,
+        "explanation": "Changing hash-relevant fields breaks lookup."
+    },
+    {
+        "id": 34,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is sorted(list) preferable to list.sort() sometimes?",
+        "options": [
+            "It returns new list",
+            "It is faster",
+            "It is in-place",
+            "It hashes values"
+        ],
+        "correct_index": 0,
+        "explanation": "sorted() does not mutate original list."
+    },
+    {
+        "id": 35,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is the complexity of list.extend?",
+        "options": [
+            "O(k)",
+            "O(n)",
+            "O(1)",
+            "O(n log n)"
+        ],
+        "correct_index": 0,
+        "explanation": "Depends on number of appended elements."
+    },
+    {
+        "id": 36,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why are dictionaries ordered in Python 3.7+?",
+        "options": [
+            "Due to CPython implementation detail becoming language guarantee",
+            "Because they use trees",
+            "Because they sort keys",
+            "Because hashing changed"
+        ],
+        "correct_index": 0,
+        "explanation": "Insertion order preservation became language guarantee."
+    },
+    {
+        "id": 37,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is the worst-case complexity of hash table lookup?",
+        "options": [
+            "O(1)",
+            "O(log n)",
+            "O(n)",
+            "O(n log n)"
+        ],
+        "correct_index": 2,
+        "explanation": "Worst case is linear due to collisions."
+    },
+    {
+        "id": 38,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is None singleton?",
+        "options": [
+            "To save memory",
+            "To guarantee identity checks",
+            "Because of garbage collector",
+            "Because of hashing"
+        ],
+        "correct_index": 1,
+        "explanation": "None is a singleton to allow reliable identity checks."
+    },
+    {
+        "id": 39,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What happens when comparing objects without __eq__?",
+        "options": [
+            "Value comparison",
+            "Identity comparison",
+            "Hash comparison",
+            "Runtime error"
+        ],
+        "correct_index": 1,
+        "explanation": "Default equality falls back to identity."
+    },
+    {
+        "id": 40,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is bool subclass of int?",
+        "options": [
+            "For historical reasons",
+            "To allow arithmetic with booleans",
+            "To reduce memory",
+            "To enable hashing"
+        ],
+        "correct_index": 1,
+        "explanation": "True and False behave like 1 and 0."
+    },
+    {
+        "id": 41,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is complexity of reversing a list?",
+        "options": [
+            "O(n)",
+            "O(1)",
+            "O(log n)",
+            "O(n log n)"
+        ],
+        "correct_index": 0,
+        "explanation": "All elements must be swapped."
+    },
+    {
+        "id": 42,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why does set disallow duplicate elements?",
+        "options": [
+            "Because of hashing and equality checks",
+            "Because of sorting",
+            "Because of memory constraints",
+            "Because of GC"
+        ],
+        "correct_index": 0,
+        "explanation": "Hash + equality ensures uniqueness."
+    },
+    {
+        "id": 43,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is cost of tuple concatenation?",
+        "options": [
+            "O(n)",
+            "O(1)",
+            "O(log n)",
+            "O(n log n)"
+        ],
+        "correct_index": 0,
+        "explanation": "New tuple must be created."
+    },
+    {
+        "id": 44,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is negative indexing not O(1) in terms of algorithmic complexity?",
+        "options": [
+            "It requires length calculation",
+            "It hashes index",
+            "It sorts elements",
+            "It is O(1)"
+        ],
+        "correct_index": 3,
+        "explanation": "Index translation is constant time."
+    },
+    {
+        "id": 45,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is memory overhead of empty dict compared to empty list?",
+        "options": [
+            "Dict is larger",
+            "List is larger",
+            "Same size",
+            "Depends on OS"
+        ],
+        "correct_index": 0,
+        "explanation": "Dictionary has larger structural overhead."
+    },
+    {
+        "id": 46,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is __eq__ important for set behavior?",
+        "options": [
+            "Defines uniqueness",
+            "Defines sorting",
+            "Defines memory layout",
+            "Defines GC"
+        ],
+        "correct_index": 0,
+        "explanation": "Equality determines whether elements are considered duplicates."
+    },
+    {
+        "id": 47,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What is cost of dict comprehension over n items?",
+        "options": [
+            "O(n)",
+            "O(log n)",
+            "O(1)",
+            "O(n log n)"
+        ],
+        "correct_index": 0,
+        "explanation": "Each item must be processed once."
+    },
+    {
+        "id": 48,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why is list.pop() O(1) but list.pop(0) O(n)?",
+        "options": [
+            "Because pop(0) sorts list",
+            "Because pop(0) shifts elements",
+            "Because pop() hashes",
+            "Because pop() resizes"
+        ],
+        "correct_index": 1,
+        "explanation": "Removing first element shifts others."
+    },
+    {
+        "id": 49,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "What guarantees deterministic iteration order in dict 3.7+?",
+        "options": [
+            "Hash sorting",
+            "Insertion order preservation",
+            "Tree structure",
+            "Garbage collector"
+        ],
+        "correct_index": 1,
+        "explanation": "Dict preserves insertion order as language guarantee."
+    },
+    {
+        "id": 50,
+        "category": "python_basics",
+        "difficulty": "hard",
+        "question": "Why can modifying a list while iterating cause bugs?",
+        "options": [
+            "Iterator caches length and index positions",
+            "List becomes immutable",
+            "Hash changes",
+            "Runtime crash always occurs"
+        ],
+        "correct_index": 0,
+        "explanation": "Mutating during iteration can shift elements and break index tracking."
+    }
+]
